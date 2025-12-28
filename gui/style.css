@@ -1,0 +1,133 @@
+:root {
+  --bg-dark: #2b2b2b;
+  --bg-panel: #3c3c3c;
+  --text-light: #e0e0e0;
+  --accent-green: #00c853;
+  --font-mono: "Monaco", "Courier New", monospace;
+}
+
+* {
+  font-family: var(--font-mono) !important;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: var(--font-mono) !important;
+}
+
+/* The 2x2 Grid Layout */
+.main-container {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  grid-template-rows: 4fr 3fr;
+  gap: 10px;
+  height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Panels general styling */
+#map-container,
+#nav-data-container,
+#chart-bar-container,
+#chart-polar-container {
+  background-color: var(--bg-panel);
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #555;
+}
+
+/* Navigation Data Panel Styling */
+#nav-data-container {
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.data-row,
+span {
+  font-family: var(--font-mono) !important;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 4px;
+}
+
+.data-row span:first-child {
+  font-weight: bold;
+  color: #aaa;
+}
+
+.btn-nav {
+  display: inline-block;
+  padding: 10px 10px;
+  background-color: var(--bg-panel);
+  color: var(--accent-green);
+  text-decoration: none;
+  border: 1px solid var(--accent-green);
+  border-radius: 4px;
+  font-family: "Monaco", "Courier New", monospace;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.btn-nav:hover {
+  background-color: var(--accent-green);
+  color: var(--bg-dark);
+  cursor: pointer;
+}
+
+.sat-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+  padding: 15px;
+  height: calc(100vh - 75px);
+}
+
+.sat-plot {
+  background-color: #3c3c3c;
+  border-radius: 8px;
+  border: 1px solid #555;
+}
+
+.mono-select {
+  background-color: var(--bg-panel);
+  color: var(--accent-green);
+  /* Your green accent */
+  border: 1px solid var(--accent-green);
+  font-family: var(--font-mono);
+  padding: 5px 10px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.mono-select option {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+/* Force Plotly backgrounds to match theme */
+.js-plotly-plot .plotly .bg {
+  fill: var(--bg-panel) !important;
+}
+
+.js-plotly-plot .plotly .polar .bg {
+  fill: var(--bg-panel) !important;
+}

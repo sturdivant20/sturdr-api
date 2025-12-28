@@ -1,0 +1,23 @@
+[server]
+host = "0.0.0.0" # host ip address
+port = 8000      # host port number
+
+[database]
+db_file = "./src/sturdr.db" # sqlite3 database filename
+max_size = 100              # maximum amount of history stored in table
+clear = true                # delete old database file before starting?
+
+[sql]
+navigation_cmds = "./config/sql/navigation.sql" # navigation table, create, read, update, delete commands
+satellite_cmds = "./config/sql/satellite.sql"   # satellite table, create, read, update, delete commands
+telemetry_cmds = "./config/sql/telemetry.sql"   # combined create, read, update, delete commands
+
+[endpoints]
+gui = "/"                  # view the graphical user interface
+navigation = "/navigation" # individual navigation data
+satellite = "/satellite"   # individual satellite data
+telemetry = "/telemetry"   # combined satellite and navigation data
+create = "/create"         # create/post new data (EX: "http://localhost:8000/satellite/create")
+read = "/read"             # read/get database data (EX: "http://localhost:8000/navigation/read")
+update = "/update/{id}"    # update database data (EX: "http://localhost:8000/telemetry/update/2")
+delete = "/delete/{id}"    # delete database data (EX: "http://localhost:8000/telemetry/3")

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SturDR GUI</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <div class="main-container">
+    <div id="map-container"></div>
+
+    <div id="nav-data-container">
+      <a href="/satellite-view" class="btn-nav">View Satellite Diagnostics →</a>
+      <hr>
+      <div class="data-row"><span>UTC Date</span> <span id="val-date">--</span></div>
+      <div class="data-row"><span>UTC Time</span> <span id="val-time">--</span></div>
+      <div class="data-row"><span>Latitude [°]</span> <span id="val-lat">--</span></div>
+      <div class="data-row"><span>Longitude [°]</span> <span id="val-lon">--</span></div>
+      <div class="data-row"><span>Altitude [m]</span> <span id="val-alt">--</span></div>
+      <div class="data-row"><span>Speed [m/s]</span> <span id="val-speed">--</span></div>
+      <div class="data-row"><span>Heading [°]</span> <span id="val-heading">--</span></div>
+      <div class="data-row"><span>PDOP</span> <span id="val-pdop">--</span></div>
+      <div class="data-row"><span>HDOP</span> <span id="val-hdop">--</span></div>
+      <div class="data-row"><span>VDOP</span> <span id="val-vdop">--</span></div>
+      <div class="data-row"><span>SV Tracked</span> <span id="val-nsat">--</span></div>
+    </div>
+
+    <div id="chart-bar-container"></div>
+
+    <div id="chart-polar-container"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+  <script src="/static/app.js"></script>
+
+  <a href="/satellite-view">Go to Satellite View</a>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+</head>
+
+<body>
+  <div class="nav-bar">
+    <a href="/" class="btn-nav">← Back to Map</a>
+    <select id="sat-selector" class="mono-select">
+      <option value="" disabled selected>Select Satellite PRN...</option>
+    </select>
+  </div>
+
+  <div class="sat-grid-container">
+    <div id="plot-doppler" class="sat-plot"></div>
+    <div id="plot-cno" class="sat-plot"></div>
+    <div id="plot-pseudorange" class="sat-plot"></div>
+    <div id="plot-correlator" class="sat-plot"></div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+
+</html>
